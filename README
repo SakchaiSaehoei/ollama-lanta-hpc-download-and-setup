@@ -23,7 +23,7 @@ tar -xvf ollama-linux-amd64.tgz
 
 # Create directory to store models
 mkdir models
-````
+
 
 ---
 

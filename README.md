@@ -1,10 +1,10 @@
 
 ---
 
-````markdown
+
 # 🧠 Running Ollama on LANTA HPC (Transfer Node)
 
-This guide walks you through setting up [Ollama](https://ollama.com) for large language model inference on a LANTA HPC transfer node, with a custom port and local model path setup.
+This guide walks you through setting up [Ollama](https://ollama.com) for large language model inference on a LANTA HPC transfer node, with a custom port and model path setup.
 
 ---
 
@@ -24,7 +24,7 @@ tar -xvf ollama-linux-amd64.tgz
 
 # Create directory to store models
 mkdir models
-````
+```
 
 ---
 

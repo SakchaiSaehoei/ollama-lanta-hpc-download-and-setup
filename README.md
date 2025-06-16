@@ -1,6 +1,12 @@
+
+---
+
+````markdown
 # 🧠 Running Ollama on LANTA HPC (Transfer Node)
 
 This guide walks you through setting up [Ollama](https://ollama.com) for large language model inference on a LANTA HPC transfer node, with a custom port and local model path setup.
+
+---
 
 ## 📦 1. Environment Setup
 
@@ -18,31 +24,39 @@ tar -xvf ollama-linux-amd64.tgz
 
 # Create directory to store models
 mkdir models
-```
+````
+
+---
 
 ## ⚙️ 2. Environment Variables
 
 ```bash
 # Add Ollama libraries to the dynamic linker path
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:{YOUR_CURRENT_WORKING_DIRECTORY}/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd)/lib
 
 # Add Ollama binary to your PATH
-export PATH=${PATH}:{YOUR_CURRENT_WORKING_DIRECTORY}/bin
+export PATH=${PATH}:$(pwd)/bin
 
 # Set the path to store downloaded models
-export OLLAMA_MODELS={YOUR_CURRENT_WORKING_DIRECTORY}/models
+export OLLAMA_MODELS=$(pwd)/models
 
 # Set a custom host and port for the Ollama server
 export OLLAMA_HOST=127.0.0.1:12345
 ```
+
 > ✅ Tip: Add these exports to your `.bashrc` or `.bash_profile` to persist across sessions.
+
+---
 
 ## 🚀 3. Start Ollama Server
 
 ```bash
 ollama serve &
 ```
+
 This will launch the Ollama backend server in the background on port `12345`.
+
+---
 
 ## 🧠 4. Pull and Run a Model
 
@@ -64,6 +78,8 @@ ollama run llama3:8b
 ollama list
 ```
 
+---
+
 ## 🛑 Stopping the Ollama Server
 
 If you started the server with `&`, find its process:
@@ -83,21 +99,34 @@ If it doesn't stop:
 ```bash
 kill -9 <PID>
 ```
+
+---
+
 ## 📁 Project Directory Structure
 
+```
 ollama/
-├── bin/              # Ollama binaries
-├── lib/              # Ollama libraries
-├── models/           # Local model storage
+├── bin/                   # Ollama binaries
+├── lib/                   # Ollama libraries
+├── models/                # Local model storage
 ├── ollama-linux-amd64.tgz
+├── setup_ollama.sh        # Optional: install script
+├── ollama_environment_setup.sh  # Optional: generated env script
 └── README.md
 ```
+
+---
 
 ## 📚 References
 
 * [Ollama Official Site](https://ollama.com)
 
+---
+
 ## ✅ Author
 
-Maintained by **Sakchai Saehoei**  
+Maintained by **Sakchai Saehoei**
 
+```
+
+```

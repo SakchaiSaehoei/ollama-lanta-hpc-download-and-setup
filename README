@@ -1,9 +1,10 @@
+Absolutely! Here’s your content revised for proper Markdown formatting throughout the entire session. The main issue was missing closing triple backticks (```) after some code blocks, which can break the Markdown preview. Below is your fixed Markdown:
 
 ---
 
 # 🧠 Running Ollama on LANTA HPC (Transfer Node)
 
-This guide walks you through setting up [Ollama](https://ollama.com) for large language model inference on a LANTA HPC transfer node, with a custom port and model path setup.
+This guide walks you through setting up [Ollama](https://ollama.com) for large language model inference on a LANTA HPC transfer node, with a custom port and local model path setup.
 
 ---
 
@@ -123,5 +124,9 @@ ollama/
 ## ✅ Author
 
 Maintained by **Sakchai Saehoei**  
+For internal use on the LANTA HPC system.
 
 ---
+
+**Copy and paste the above into your README and it will render perfectly in Markdown on GitHub and any other Markdown viewer.**  
+If you need further formatting help or want to add advanced Markdown features (like tables or images), let me know!
